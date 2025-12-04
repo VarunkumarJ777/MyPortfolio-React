@@ -19,6 +19,8 @@ export type Social = { label: string; url: string };
 
 export type ProjectLink = { name: string; url: string; blurb: string };
 
+export type Award = { title: string; issuer: string; year?: string };
+
 export const hero = {
   name: 'Varun Kumar J',
   location: 'Cary, NC',
@@ -341,6 +343,11 @@ export const socials: Social[] = [
   { label: 'Instagram', url: 'https://www.instagram.com/iamvarunkumarj' },
   { label: 'GitHub', url: 'https://github.com/VarunkumarJ777' },
   { label: 'Email', url: 'mailto:jvarunkumar444@gmail.com' },
+];
+
+export const awards: Award[] = [
+  { title: 'Hackathon Winner', issuer: 'HCL Tech' },
+  { title: 'Delivery Champion', issuer: 'Capgemini' },
 ];
 
 export const education = {

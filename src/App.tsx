@@ -3,6 +3,7 @@ import Certifications from './components/Certifications';
 import Education from './components/Education';
 import Experience from './components/Experience';
 import Hero from './components/Hero';
+import Awards from './components/Awards';
 import Nav from './components/Nav';
 import Projects from './components/Projects';
 import Skills from './components/Skills';
@@ -17,6 +18,7 @@ function App() {
       <Stats />
       <Projects />
       <Experience />
+      <Awards />
       <Socials />
       <Skills />
       <Certifications />

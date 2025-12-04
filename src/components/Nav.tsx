@@ -2,6 +2,7 @@ const links = [
   { href: '#stats', label: 'Snapshot' },
   { href: '#projects', label: 'Projects' },
   { href: '#experience', label: 'Experience' },
+  { href: '#awards', label: 'Awards' },
   { href: '#skills', label: 'Skills' },
   { href: '#certs', label: 'Certs' },
   { href: '#education', label: 'Education' },
