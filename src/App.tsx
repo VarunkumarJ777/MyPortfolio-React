@@ -1,5 +1,8 @@
 import './App.css';
+import { useEffect, useState } from 'react';
 import Certifications from './components/Certifications';
+import About from './components/About';
+import CustomCursor from './components/CustomCursor';
 import Education from './components/Education';
 import Experience from './components/Experience';
 import Hero from './components/Hero';
@@ -11,18 +14,40 @@ import Socials from './components/Socials';
 import Stats from './components/Stats';
 
 function App() {
+  const [theme, setTheme] = useState<'light' | 'dark'>('dark');
+
+  useEffect(() => {
+    const stored = localStorage.getItem('theme');
+    if (stored === 'light' || stored === 'dark') {
+      setTheme(stored);
+      return;
+    }
+    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      setTheme('dark');
+    }
+  }, []);
+
+  useEffect(() => {
+    document.body.classList.toggle('theme-dark', theme === 'dark');
+    localStorage.setItem('theme', theme);
+  }, [theme]);
+
+  const toggleTheme = () => setTheme((prev) => (prev === 'light' ? 'dark' : 'light'));
+
   return (
     <div className="app">
-      <Nav />
+      <CustomCursor />
+      <Nav theme={theme} onToggleTheme={toggleTheme} />
       <Hero />
+      <About />
       <Stats />
       <Projects />
       <Experience />
       <Awards />
-      <Socials />
       <Skills />
       <Certifications />
       <Education />
+      <Socials />
     </div>
   );
 }
